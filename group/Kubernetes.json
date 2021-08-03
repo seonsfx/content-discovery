@@ -331,7 +331,6 @@
         "stacked" : true,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -657,7 +656,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -951,7 +949,6 @@
         "stacked" : true,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -1001,7 +998,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -1060,7 +1056,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -1125,7 +1120,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -1242,7 +1236,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -1322,7 +1315,6 @@
         "stacked" : true,
         "time" : {
           "range" : 3600001,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -1489,7 +1481,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -1536,7 +1527,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -1602,7 +1592,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -1662,7 +1651,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -1781,7 +1769,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -1880,7 +1867,6 @@
         "sortProperty" : null,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -1979,7 +1965,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -2141,7 +2126,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -2233,7 +2217,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -2306,7 +2289,6 @@
         "sortProperty" : null,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -2445,7 +2427,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -2531,7 +2512,6 @@
         "sortBy" : "+sf_originatingMetric",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -2644,7 +2624,6 @@
         "stacked" : true,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -2748,7 +2727,6 @@
         "stacked" : true,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -2906,7 +2884,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -3043,7 +3020,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -3090,7 +3066,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -3138,7 +3113,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -3186,7 +3160,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -3345,7 +3318,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -3437,7 +3409,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -3502,7 +3473,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -3562,7 +3532,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -3609,7 +3578,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -3699,7 +3667,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -3767,7 +3734,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -3931,7 +3897,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -4059,7 +4024,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -4133,7 +4097,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -4192,7 +4155,6 @@
         "sortBy" : "+sf_metric",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -4239,7 +4201,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -4287,7 +4248,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -4338,7 +4298,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -4427,7 +4386,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -4513,7 +4471,6 @@
         "sortBy" : "+sf_originatingMetric",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -4638,7 +4595,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -4685,7 +4641,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -4829,7 +4784,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -4945,7 +4899,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -5043,7 +4996,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -5093,7 +5045,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -5227,7 +5178,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -5274,7 +5224,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -5371,7 +5320,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -5551,7 +5499,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -5601,7 +5548,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -5726,7 +5672,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -5773,7 +5718,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -5890,7 +5834,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600001,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -5940,7 +5883,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -5999,7 +5941,6 @@
         "sortBy" : "+sf_metric",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -6088,7 +6029,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -6138,7 +6078,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -6185,7 +6124,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -6311,7 +6249,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -6436,7 +6373,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -6561,7 +6497,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -6641,7 +6576,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -6733,7 +6667,6 @@
         "sortBy" : "",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -6825,7 +6758,6 @@
         "sortBy" : "",
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -6914,7 +6846,6 @@
         "sortBy" : "",
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -6994,7 +6925,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7074,7 +7004,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7130,7 +7059,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -7211,7 +7139,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7291,7 +7218,6 @@
         "stacked" : false,
         "time" : {
           "range" : 3600000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7389,7 +7315,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7469,7 +7394,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7549,7 +7473,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7596,7 +7519,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -7677,7 +7599,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7757,7 +7678,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7816,7 +7736,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -7896,7 +7815,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -7976,7 +7894,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -8056,7 +7973,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -8103,7 +8019,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8184,7 +8099,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -8291,7 +8205,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -8338,7 +8251,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8386,7 +8298,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8434,7 +8345,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8482,7 +8392,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8530,7 +8439,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8629,7 +8537,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -8680,7 +8587,7 @@
           "valueUnit" : null,
           "yAxis" : 0
         }, {
-          "displayName" : "A+B - Count",
+          "displayName" : "A+B",
           "label" : "C",
           "paletteIndex" : null,
           "plotType" : null,
@@ -8694,7 +8601,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8702,7 +8608,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('apiserver_request_count', filter=filter('metric_source', 'kubernetes-apiserver')).sum(by=['kubernetes_cluster', 'kubernetes_node']).publish(label='A', enable=False)\nB = data('apiserver_request_total', filter=filter('metric_source', 'kubernetes-apiserver')).sum(by=['kubernetes_cluster', 'kubernetes_node']).publish(label='B', enable=False)\nC = union(A, B).count().publish(label='C')",
+      "programText" : "A = data('apiserver_request_count', filter=filter('metric_source', 'kubernetes-apiserver')).sum(by=['kubernetes_cluster', 'kubernetes_node']).count().publish(label='A', enable=False)\nB = data('apiserver_request_total', filter=filter('metric_source', 'kubernetes-apiserver')).sum(by=['kubernetes_cluster', 'kubernetes_node']).count().publish(label='B', enable=False)\nC = (A+B).publish(label='C')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -8742,7 +8648,6 @@
         "showSparkLine" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "timestampHidden" : false,
@@ -8841,7 +8746,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -8900,7 +8804,6 @@
         "sortBy" : "-value",
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "List",
@@ -8980,7 +8883,6 @@
         "stacked" : false,
         "time" : {
           "range" : 900000,
-          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -9303,7 +9205,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_cluster",
-          "propertyMappings" : [ "kubernetes_cluster", "k8s.cluster.name" ],
+          "propertyMappings" : [ "kubernetes_cluster" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9314,7 +9216,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_namespace",
-          "propertyMappings" : [ "kubernetes_namespace", "k8s.namespace.name" ],
+          "propertyMappings" : [ "kubernetes_namespace" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9325,7 +9227,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_node",
-          "propertyMappings" : [ "kubernetes_node", "k8s.node.name" ],
+          "propertyMappings" : [ "kubernetes_node" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9336,7 +9238,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "deployment",
-          "propertyMappings" : [ "deployment", "k8s.deployment.name" ],
+          "propertyMappings" : [ "deployment" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9520,7 +9422,7 @@
           "description" : "K8s Node",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_node",
-          "propertyMappings" : [ "kubernetes_node", "k8s.node.name" ],
+          "propertyMappings" : [ "kubernetes_node" ],
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
@@ -9612,7 +9514,7 @@
           "description" : "Kubernetes Cluster Name",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_cluster",
-          "propertyMappings" : [ "kubernetes_cluster", "k8s.cluster.name" ],
+          "propertyMappings" : [ "kubernetes_cluster" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9716,7 +9618,7 @@
           "description" : "k8s cluster",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_cluster",
-          "propertyMappings" : [ "kubernetes_cluster", "k8s.cluster.name" ],
+          "propertyMappings" : [ "kubernetes_cluster" ],
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
@@ -9820,7 +9722,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_cluster",
-          "propertyMappings" : [ "kubernetes_cluster", "k8s.cluster.name" ],
+          "propertyMappings" : [ "kubernetes_cluster" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9831,7 +9733,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_namespace",
-          "propertyMappings" : [ "kubernetes_namespace", "k8s.namespace.name" ],
+          "propertyMappings" : [ "kubernetes_namespace" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9842,7 +9744,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "deployment",
-          "propertyMappings" : [ "deployment", "k8s.deployment.name" ],
+          "propertyMappings" : [ "deployment" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -9933,7 +9835,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_pod_name",
-          "propertyMappings" : [ "kubernetes_pod_name", "k8s.pod.name" ],
+          "propertyMappings" : [ "kubernetes_pod_name" ],
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
@@ -10025,7 +9927,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_cluster",
-          "propertyMappings" : [ "kubernetes_cluster", "k8s.cluster.name" ],
+          "propertyMappings" : [ "kubernetes_cluster" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -10036,7 +9938,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_namespace",
-          "propertyMappings" : [ "kubernetes_namespace", "k8s.namespace.name" ],
+          "propertyMappings" : [ "kubernetes_namespace" ],
           "replaceOnly" : true,
           "required" : false,
           "restricted" : false,
@@ -10047,7 +9949,7 @@
           "description" : "Deployment",
           "preferredSuggestions" : [ ],
           "property" : "deployment",
-          "propertyMappings" : [ "deployment", "k8s.deployment.name" ],
+          "propertyMappings" : [ "deployment" ],
           "replaceOnly" : false,
           "required" : false,
           "restricted" : false,
@@ -10120,7 +10022,7 @@
           "description" : "Container Id",
           "preferredSuggestions" : [ ],
           "property" : "container_id",
-          "propertyMappings" : [ "container_id", "container.id" ],
+          "propertyMappings" : [ "container_id" ],
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
@@ -10299,7 +10201,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_cluster",
-          "propertyMappings" : [ "kubernetes_cluster", "k8s.cluster.name" ],
+          "propertyMappings" : [ "kubernetes_cluster" ],
           "replaceOnly" : false,
           "required" : false,
           "restricted" : false,
@@ -10310,7 +10212,7 @@
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "kubernetes_node",
-          "propertyMappings" : [ "kubernetes_node", "k8s.node.name" ],
+          "propertyMappings" : [ "kubernetes_node" ],
           "replaceOnly" : false,
           "required" : false,
           "restricted" : false,
@@ -10356,7 +10258,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1957000768,
+  "hashCode" : -1410349708,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
