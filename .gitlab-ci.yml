@@ -1,0 +1,6 @@
+include:
+  - project: "observability/shared/gitlab-jobs"
+    file: "infra-code-security-scan.yaml"
+
+stages:
+  - code_analysis
