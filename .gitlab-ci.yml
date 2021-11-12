@@ -1,6 +1,21 @@
 include:
   - project: "observability/shared/gitlab-jobs"
     file: "infra-code-security-scan.yaml"
+  - project: 'prodsec/whitesource'
+    ref: latest
+    file: '/templates/.whitesource.yml'
 
 stages:
   - code_analysis
+  - whitesource
+
+whitesource:
+  extends: .whitesource
+  stage: whitesource
+  variables:
+    ws_user_key: ${WHITESOURCE_USER_KEY}
+    product_id: ${WHITESOURCE_ID}
+    config: generic
+  only:
+    refs:
+      - master
