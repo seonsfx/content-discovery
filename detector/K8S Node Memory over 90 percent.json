@@ -1,0 +1,80 @@
+{
+  "detectorExport": {
+    "detector": {
+      "authorizedWriters": null,
+      "created": 0,
+      "creator": null,
+      "customProperties": {},
+      "description": "Alerts when K8s Node is using memory > 90% for 5m",
+      "detectorOrigin": "AutoDetect",
+      "id": "FAdmGEaAYAA",
+      "labelResolutions": {
+        "K8S Node Memory is higher than 90% for 5m": 1000
+      },
+      "lastUpdated": 0,
+      "lastUpdatedBy": null,
+      "maxDelay": 0,
+      "minDelay": 0,
+      "name": "K8S Node Memory is higher than 90% for 5m",
+      "overMTSLimit": false,
+      "packageSpecifications": "",
+      "programText": "A = data('memory.utilization', filter=filter('k8s.cluster.name', '*')).sum(by=['host', 'k8s.cluster.name']).publish(label='A')\ndetect(when(A > threshold(90), lasting='5m'), auto_resolve_after='1d').publish('K8S Node Memory is higher than 90% for 5m')",
+      "rules": [
+        {
+          "description": "The value of Memory Utilization is above 90.",
+          "detectLabel": "K8S Node Memory is higher than 90% for 5m",
+          "disabled": false,
+          "notifications": null,
+          "parameterizedBody": "{{#if anomalous}}\n\t    Rule \"{{{ruleName}}}\" triggered at {{dateTimeFormat timestamp format=\"full\"}}.\n    {{else}}\n\t    Rule \"{{{ruleName}}}\" cleared at {{dateTimeFormat timestamp format=\"full\"}}.\n    {{/if}}\n    {{#if anomalous}}\n      Triggering condition: {{{readableRule}}}\n    {{/if}}\n    {{#if anomalous}}\n      Signal value: {{inputs.A.value}}\n    {{else}}\n      Current signal value: {{inputs.A.value}}\n    {{/if}}\n    {{#notEmpty dimensions}}\n      Signal details: {{{dimensions}}}\n    {{/notEmpty}}\n    {{#if anomalous}}\n      {{#if runbookUrl}}\n        Runbook: {{{runbookUrl}}}\n      {{/if}}\n      {{#if tip}}\n        Tip: {{{tip}}}\n      {{/if}}\n    {{/if}}",
+          "parameterizedSubject": "{{ruleSeverity}} Alert: {{{ruleName}}}",
+          "runbookUrl": null,
+          "severity": "Major",
+          "tip": null
+        }
+      ],
+      "tags": null,
+      "teams": null,
+      "timezone": null,
+      "visualizationOptions": {
+        "disableSampling": false,
+        "publishLabelOptions": [
+          {
+            "displayName": "Memory Utilization",
+            "label": "A",
+            "paletteIndex": null,
+            "valuePrefix": "",
+            "valueSuffix": "",
+            "valueUnit": null
+          }
+        ],
+        "showDataMarkers": false,
+        "showEventLines": false,
+        "time": {
+          "range": 900000,
+          "rangeEnd": 0,
+          "type": "relative"
+        }
+      },
+      "importQualifiers": [
+        {
+          "filters": [
+            {
+              "not": false,
+              "property": "k8s.cluster.name",
+              "values": []
+            },
+            {
+              "not": false,
+              "property": "host",
+              "values": []
+            }
+          ],
+          "metric": "memory.utilization"
+        }
+      ]
+    }
+  },
+  "hashCode": 1628070263,
+  "id": "FAdmGEaAYAA",
+  "packageType": "DETECTOR"
+}
