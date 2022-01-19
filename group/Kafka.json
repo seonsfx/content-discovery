@@ -5762,8 +5762,8 @@
       "customProperties" : null,
       "description" : "An overview of Kafka broker across clusters. Set the cluster filter to view brokers from a cluster",
       "discoveryOptions" : {
-        "query" : "hostHasService:kafka",
-        "selectors" : [ "sf_key:host", "hostHasService:kafka" ]
+        "query" : "sf_metric:counter.kafka-bytes-out AND _exists_:host",
+        "selectors" : [ "sf_key:host" ]
       },
       "eventOverlays" : null,
       "filters" : {
@@ -5852,7 +5852,12 @@
       "creator" : null,
       "customProperties" : null,
       "description" : "An overview of all the Kafka consumers",
-      "discoveryOptions" : null,
+      "discoveryOptions": {
+        "query": "hostHasService:kafka_consumer",
+        "selectors": [
+          "sf_key:client-id"
+        ]
+      },
       "eventOverlays" : null,
       "filters" : {
         "sources" : null,
@@ -5950,7 +5955,12 @@
       "creator" : null,
       "customProperties" : null,
       "description" : "Overview metrics for all producers",
-      "discoveryOptions" : null,
+      "discoveryOptions": {
+        "query": "hostHasService:kafka_producer",
+        "selectors": [
+          "sf_key:client-id"
+        ]
+      },
       "eventOverlays" : null,
       "filters" : {
         "sources" : null,
@@ -6066,7 +6076,12 @@
       "creator" : null,
       "customProperties" : null,
       "description" : "",
-      "discoveryOptions" : null,
+      "discoveryOptions": {
+        "query": "sf_metric:counter.kafka-bytes-out AND _exists_:host",
+        "selectors": [
+          "_exists_:host"
+        ]
+      },
       "eventOverlays" : null,
       "filters" : {
         "sources" : null,
@@ -6158,7 +6173,12 @@
       "creator" : null,
       "customProperties" : null,
       "description" : "",
-      "discoveryOptions" : null,
+      "discoveryOptions": {
+        "query": "hostHasService:kafka_consumer",
+        "selectors": [
+          "_exists_:client-id"
+        ]
+      },
       "eventOverlays" : null,
       "filters" : {
         "sources" : null,
@@ -6376,7 +6396,12 @@
       "creator" : null,
       "customProperties" : null,
       "description" : "",
-      "discoveryOptions" : null,
+      "discoveryOptions": {
+        "query": "hostHasService:kafka_producer",
+        "selectors": [
+          "_exists_:client-id"
+        ]
+      },
       "eventOverlays" : null,
       "filters" : {
         "sources" : null,
@@ -6445,7 +6470,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -1085230013,
+  "hashCode": 543273540,
   "id" : "DiVWAPnAYAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
