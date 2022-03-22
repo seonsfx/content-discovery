@@ -1,11 +1,12 @@
 {
-  "hashCode" : -280644602,
+  "hashCode" : 973827766,
   "id" : "DiVU_KHAcAA",
   "modelVersion" : 1,
   "navigatorExport" : {
     "navigator" : {
       "created" : 0,
       "creator" : null,
+      "defaultGroupBy" : "aws_region",
       "description" : "",
       "id" : "DiVU_KHAcAA",
       "importQualifiers" : [ {
