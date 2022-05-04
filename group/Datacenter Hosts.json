@@ -1435,7 +1435,7 @@
       "created" : 0,
       "creator" : null,
       "customProperties" : { },
-      "description" : "by host.name",
+      "description" : "by host",
       "id" : "EybVCRtAYAA",
       "importOf" : "EyZxBetAAAM",
       "lastUpdated" : 0,
@@ -1477,7 +1477,7 @@
           "timezone" : null
         },
         "publishLabelOptions" : [ {
-          "displayName" : "system.network.io - Mean by host.name - Top 5",
+          "displayName" : "system.network.io - Mean by host - Top 5",
           "label" : "A",
           "paletteIndex" : null,
           "plotType" : null,
@@ -1498,7 +1498,7 @@
         "unitPrefix" : "Binary"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('system.network.io', filter=filter('direction', 'transmit') and filter('host', '*') and (not filter('cloud.provider', '*')) and (not filter('AWSUniqueId', '*')) and (not filter('gcp_id', '*')) and (not filter('azure_resource_id', '*')) and (not filter('kubernetes_node', '*'))).mean(by=['host.name']).top(count=5).publish(label='A')",
+      "programText" : "A = data('system.network.io', filter=filter('direction', 'transmit') and filter('host', '*') and (not filter('cloud.provider', '*')) and (not filter('AWSUniqueId', '*')) and (not filter('gcp_id', '*')) and (not filter('azure_resource_id', '*')) and (not filter('kubernetes_node', '*'))).mean(by=['host']).top(count=5).publish(label='A')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
