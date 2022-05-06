@@ -158,9 +158,9 @@
       "id" : "FSBz4udAYAk",
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
-      "name" : "Dashboards - Info",
+      "name" : "Datapoints Dropped: Metrics and Explanation",
       "options" : {
-        "markdown" : "Metric:\n<code>sf.org.num.dashboard</code>\n\nTotal number of dashboards; includes all user, custom, and built-in dashboards.",
+        "markdown" : "<code>sf.org.numDatapointsDroppedExceededQuota</code> is the total number of new data points you sent to Infrastructure Monitoring but that Infrastructure Monitoring didn't accept, because your organization exceeded its subscription limit.<br />\n<code>sf.org.numDatapointsDroppedThrottle</code> is the total number of data points that Splunk Observability did not accept because your organization significantly exceeded its DPM limit. Hitting this limit means that new datapoints are not accepted for existing and new MTS.<br />\n<code>sf.org.numDatapointsDroppedBatchSize</code> is the number of data points dropped because a single request contained more than 100,000 data points.<br />\n<code>sf.org.numDatapointsDroppedInTimeout</code> is the number of data points Observability Cloud didn't attempt to create because your account was throttled or limited in the previous few seconds and creation was unlikely to succeed.<br />\n<code>sf.org.numDatapointsDroppedInvalid</code> is the number of data points dropped because they didn't follow documented guidelines for data points. For example, the metric name was too long, the metric name included unsupported characters, or the data point contained no values.<br />",
         "type" : "Text"
       },
       "packageSpecifications" : "",
@@ -208,27 +208,23 @@
         },
         "includeZero" : false,
         "legendOptions" : {
-          "fields" : [ {
-            "enabled" : false,
-            "property" : "sf_originatingMetric"
-          }, {
-            "enabled" : false,
-            "property" : "orgId"
-          }, {
-            "enabled" : true,
-            "property" : "sf_metric"
-          } ]
+          "fields" : null
         },
         "lineChartOptions" : {
           "showDataMarkers" : false
         },
+        "noDataOptions" : {
+          "linkText" : null,
+          "linkUrl" : null,
+          "noDataMessage" : null
+        },
         "onChartLegendOptions" : {
-          "dimensionInLegend" : null,
-          "showLegend" : false
+          "dimensionInLegend" : "sf_metric",
+          "showLegend" : true
         },
         "programOptions" : {
           "disableSampling" : false,
-          "maxDelay" : null,
+          "maxDelay" : 0,
           "minimumResolution" : 0,
           "timezone" : null
         },
@@ -274,14 +270,15 @@
           "paletteIndex" : 8,
           "plotType" : null,
           "valuePrefix" : null,
-          "valueSuffix" : "detectors",
+          "valueSuffix" : null,
           "valueUnit" : null,
           "yAxis" : 0
         } ],
         "showEventLines" : false,
         "stacked" : true,
         "time" : {
-          "range" : 21600000,
+          "range" : 900000,
+          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -314,29 +311,33 @@
           "lowWatermarkLabel" : null,
           "max" : null,
           "min" : null
+        }, {
+          "highWatermark" : null,
+          "highWatermarkLabel" : null,
+          "label" : "",
+          "lowWatermark" : null,
+          "lowWatermarkLabel" : null,
+          "max" : null,
+          "min" : null
         } ],
         "axisPrecision" : null,
         "colorBy" : "Dimension",
-        "defaultPlotType" : "LineChart",
+        "defaultPlotType" : "AreaChart",
         "eventPublishLabelOptions" : [ ],
         "histogramChartOptions" : {
           "colorThemeIndex" : 16
         },
         "includeZero" : false,
         "legendOptions" : {
-          "fields" : [ {
-            "enabled" : false,
-            "property" : "sf_originatingMetric"
-          }, {
-            "enabled" : false,
-            "property" : "orgId"
-          }, {
-            "enabled" : true,
-            "property" : "sf_metric"
-          } ]
+          "fields" : null
         },
         "lineChartOptions" : {
           "showDataMarkers" : false
+        },
+        "noDataOptions" : {
+          "linkText" : null,
+          "linkUrl" : null,
+          "noDataMessage" : null
         },
         "onChartLegendOptions" : {
           "dimensionInLegend" : "sf_metric",
@@ -344,17 +345,17 @@
         },
         "programOptions" : {
           "disableSampling" : false,
-          "maxDelay" : null,
+          "maxDelay" : 0,
           "minimumResolution" : 0,
           "timezone" : null
         },
         "publishLabelOptions" : [ {
-          "displayName" : "Muting Rules",
-          "label" : "B",
+          "displayName" : "MTS Limited by Subscription",
+          "label" : "MTS Limited by Subscription",
           "paletteIndex" : null,
           "plotType" : null,
           "valuePrefix" : null,
-          "valueSuffix" : "muting rules",
+          "valueSuffix" : null,
           "valueUnit" : null,
           "yAxis" : 0
         }, {
@@ -386,9 +387,10 @@
           "yAxis" : 0
         } ],
         "showEventLines" : false,
-        "stacked" : false,
+        "stacked" : true,
         "time" : {
-          "range" : 21600000,
+          "range" : 900000,
+          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -440,6 +442,14 @@
           "lowWatermarkLabel" : null,
           "max" : null,
           "min" : null
+        }, {
+          "highWatermark" : null,
+          "highWatermarkLabel" : null,
+          "label" : "",
+          "lowWatermark" : null,
+          "lowWatermarkLabel" : null,
+          "max" : null,
+          "min" : null
         } ],
         "axisPrecision" : null,
         "colorBy" : "Dimension",
@@ -455,13 +465,18 @@
         "lineChartOptions" : {
           "showDataMarkers" : false
         },
+        "noDataOptions" : {
+          "linkText" : null,
+          "linkUrl" : null,
+          "noDataMessage" : null
+        },
         "onChartLegendOptions" : {
           "dimensionInLegend" : "categoryType",
           "showLegend" : true
         },
         "programOptions" : {
           "disableSampling" : false,
-          "maxDelay" : null,
+          "maxDelay" : 0,
           "minimumResolution" : 0,
           "timezone" : null
         },
@@ -476,9 +491,10 @@
           "yAxis" : 0
         } ],
         "showEventLines" : false,
-        "stacked" : false,
+        "stacked" : true,
         "time" : {
-          "range" : 21600000,
+          "range" : 900000,
+          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -3463,22 +3479,7 @@
           "rangeEnd" : 0,
           "type" : "relative"
         },
-        "publishLabelOptions" : [ {
-          "displayName" : "Dashboard Groups",
-          "label" : "A",
-          "paletteIndex" : null,
-          "plotType" : null,
-          "valuePrefix" : "",
-          "valueSuffix" : "dashboard groups",
-          "valueUnit" : null,
-          "yAxis" : 0
-        } ],
-        "refreshInterval" : null,
-        "secondaryVisualization" : "None",
-        "showSparkLine" : false,
-        "time" : null,
-        "timestampHidden" : true,
-        "type" : "SingleValue",
+        "type" : "TimeSeriesChart",
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
@@ -3532,6 +3533,7 @@
         "lineChartOptions" : {
           "showDataMarkers" : false
         },
+        "noDataOptions" : null,
         "onChartLegendOptions" : {
           "dimensionInLegend" : null,
           "showLegend" : false
@@ -3556,6 +3558,7 @@
         "stacked" : false,
         "time" : {
           "range" : 21600000,
+          "rangeEnd" : 0,
           "type" : "relative"
         },
         "type" : "TimeSeriesChart",
@@ -4090,12 +4093,14 @@
       "lastUpdatedBy" : null,
       "maxDelayOverride" : null,
       "name" : "Engagement",
+      "permissions" : null,
       "selectedEventOverlays" : [ ],
       "tags" : null
     }
   } ],
   "groupExport" : {
     "group" : {
+      "authorizedWriters" : null,
       "created" : 0,
       "creator" : null,
       "dashboards" : [ "FSBz-coAYAI", "FSB0cE1AgAE", "FSB0ghcAgAA", "FSB0wWTAgAA" ],
@@ -4109,6 +4114,7 @@
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
       "name" : "Organization Metrics",
+      "permissions" : null,
       "teams" : null
     }
   },
