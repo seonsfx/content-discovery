@@ -1,5 +1,5 @@
 {
-	"hashCode" : 1534203786,
+	"hashCode" : 1822042278,
 	"id" : "FTwxEZhAcAA",
 	"modelVersion" : 1,
 	"navigatorExport" : {
@@ -7,7 +7,7 @@
 		"connectedCategory" : true,
 		"created" : 0,
 		"creator" : null,
-		"defaultGroupBy" : "k8s.cluster.name",
+		"defaultGroupBy" : "",
 		"description" : "",
 		"id" : "FTwxEZhAcAA",
 		"idDisplayName" : "",
@@ -36,7 +36,7 @@
 		"navigatorType" : "elemental",
 		
 		"sites" : "o11y",
-		"systemTypes" : [ "kubernetes" ],
+		"systemTypes" : [ "" ],
 		"uiModel" : {
 		  "alertQuery" : "_exists_:k8s.cluster.name",
 		  "category" : "Kubernetes",
