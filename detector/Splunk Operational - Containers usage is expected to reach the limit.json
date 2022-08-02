@@ -75,7 +75,7 @@
           "filters": [
             {
               "not": false,
-              "name": "resourceType",
+              "property": "resourceType",
               "values": [
                 "container"
               ]
