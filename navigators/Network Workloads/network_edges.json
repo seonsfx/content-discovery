@@ -1,5 +1,5 @@
 {
-  "hashCode": 1104111278,
+  "hashCode": 897132050,
   "id": "FYgqVToAYAI",
   "modelVersion": 1,
   "navigatorExport": {
@@ -14,19 +14,16 @@
       "idDisplayName": null,
       "importQualifiers": [{
         "filters": [{
-            "not": false,
-            "property": "source.workload.name",
-            "values": []
-          },
-          {
-            "not": false,
-            "property": "dest.workload.name",
-            "values": []
-          }
-        ],
+          "not": false,
+          "property": "source.workload.name",
+          "values": []
+        }, {
+          "not": false,
+          "property": "dest.workload.name",
+          "values": []
+        }],
         "metric": "tcp.bytes"
-      }
-    ],
+      }],
       "instanceDashboards": null,
       "instanceDisplayText": null,
       "lastUpdated": 0,
@@ -44,35 +41,28 @@
         "alertQuery": "_exists_:source.workload.name AND _exists_:dest.workload.name",
         "category": "Network Explorer",
         "categoryPriority": 100,
-        "discoveryQuery": [
-          "_exists_:source.workload.name",
-          "_exists_:dest.workload.name"
-        ],
+        "discoveryQuery": ["_exists_:source.workload.name", "_exists_:dest.workload.name"],
         "displayName": "Network edges",
         "filterProperties": null,
         "id": "networkedges",
         "idName": "Edge",
         "idTemplate": "{{source.workload.name}} | {{dest.workload.name}}",
-        "listColumns": [
-          {
+        "listColumns": [{
           "aggregate": null,
           "displayName": "Source workload | Destination workload",
           "format": "id",
           "metric": null,
           "property": "id",
           "sortable": null
-        }, 
-        {
+        }, {
           "aggregate": null,
           "displayName": "Value",
           "format": "Number",
           "metric": null,
           "property": "value",
           "sortable": null
-        }
-      ],
-        "metrics": [
-          {
+        }],
+        "metrics": [{
           "coloring": {
             "limits": null,
             "maxValue": 100,
@@ -94,8 +84,7 @@
           "valueFormat": "Percentage",
           "valueLabel": "Network packet loss",
           "valueType": null
-        }, 
-        {
+        }, {
           "coloring": {
             "limits": null,
             "maxValue": null,
@@ -117,8 +106,7 @@
           "valueFormat": "Number",
           "valueLabel": "Round trip time",
           "valueType": null
-        }, 
-        {
+        }, {
           "coloring": {
             "limits": null,
             "maxValue": 100,
@@ -140,8 +128,7 @@
           "valueFormat": "Percentage",
           "valueLabel": "TCP connection timeouts",
           "valueType": null
-        }, 
-        {
+        }, {
           "coloring": {
             "limits": null,
             "maxValue": 100,
@@ -163,8 +150,7 @@
           "valueFormat": "Percentage",
           "valueLabel": "TCP resets",
           "valueType": null
-        }
-      ],
+        }],
         "mtsQuery": "_exists_:source.workload.name AND _exists_:dest.workload.name",
         "o11yMetricName": "Running edges",
         "o11yMetricUnit": null,
@@ -174,23 +160,20 @@
         "propertyColumns": null,
         "proxyProperties": null,
         "requiredProperties": ["source.workload.name", "dest.workload.name"],
-        "singleHostSystemDashboardName": "Network Explorer Edge Dashboard",
-        "systemDashboardName": "Network Explorer - Edge Overview",
+        "singleHostSystemDashboardName": "Edge dashboard",
+        "systemDashboardName": "Edge overview",
         "systemDashboardPrefix": null,
-        "tooltipKeyList": [
-          {
+        "tooltipKeyList": [{
           "displayName": "Region",
           "format": null,
           "isSummaryProperty": true,
           "property": "cloud.region"
-        }, 
-        {
+        }, {
           "displayName": "Value",
           "format": null,
           "isSummaryProperty": true,
           "property": "value"
-        }
-      ],
+        }],
         "type": "elemental",
         "unreleased": false
       }
