@@ -1,5 +1,5 @@
 {
-    "hashCode": 2133999332,
+    "hashCode": 297602103,
     "id": "DiVU_KHAcAA",
     "modelVersion": 1,
     "navigatorExport": {
@@ -233,7 +233,7 @@
                 "o11yMetricName": "Running Clusters",
                 "o11yMetricUnit": null,
                 "o11yProductName": "ECS",
-                "o11ySignalflowTemplate": "A = data('CPUUtilization', filter=filter('namespace', 'AWS/ECS') and filter('stat', 'mean') and filter('ClusterName', '*'), extrapolation='last_value', maxExtrapolations=2).sum(by=['ClusterName']).count().publish(label='A')",
+                "o11ySignalflowTemplate": "A = data('CPUUtilization', filter=filter('namespace', 'AWS/ECS') and filter('stat', 'mean') and filter('ClusterName', '*') and filter('ServiceName', '*'), extrapolation='last_value', maxExtrapolations=2).sum(by=['ClusterName']).count().publish(label='A')",
                 "o11yTrendDisplayMode": "absolute",
                 "propertyColumns": [
                     [{
