@@ -13354,7 +13354,7 @@
         "time" : null,
         "variables" : [ {
           "alias" : "Pod",
-          "applyIfExists" : false,
+          "applyIfExists" : true,
           "description" : "K8s pod name",
           "preferredSuggestions" : [ ],
           "property" : "k8s.pod.name",
@@ -13455,7 +13455,7 @@
           "value" : ""
         }, {
           "alias" : "Namespace",
-          "applyIfExists" : false,
+          "applyIfExists" : true,
           "description" : "",
           "preferredSuggestions" : [ ],
           "property" : "k8s.namespace.name",
@@ -14155,7 +14155,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -1350350184,
+  "hashCode" : -1185486652,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
