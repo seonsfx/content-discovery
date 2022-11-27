@@ -3840,7 +3840,7 @@
         "conditions" : [ {
           "not" : false,
           "property" : "telemetry_sdk_language",
-          "values" : [ "node" ]
+          "values" : [ "nodejs" ]
         } ],
         "isDefault" : true,
         "name" : "NodeJS Runtime Metrics",
@@ -4413,7 +4413,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 989059255,
+  "hashCode" : 1583429964,
   "id" : "FgirrpLAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
