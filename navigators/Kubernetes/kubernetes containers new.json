@@ -1,5 +1,5 @@
 {
-  "hashCode": 1549095277,
+  "hashCode": 634306354,
   "id": "FTBxJpUAgAA",
   "modelVersion": 1,
   "navigatorExport": {
@@ -46,7 +46,7 @@
               "alertQuery": "_exists_:k8s.container.name",
               "category": "Kubernetes",
               "categoryPriority": 100,
-              "discoveryQuery": [],
+              "discoveryQuery": null,
               "displayName": "K8s containers",
               "filterProperties": null,
               "id": "k8scontainers",
@@ -422,8 +422,8 @@
                   "defaultVisualization": true,
                   "type": "hierarchical",
                   "views": [
-                      "aggregate",
-                      "instance"
+                      "instance",
+                      "aggregate"
                   ]
               },
               {
