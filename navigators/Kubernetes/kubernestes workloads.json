@@ -1,5 +1,5 @@
 {
-  "hashCode" : 333946566,
+  "hashCode" : 1436137191,
   "id" : "FTB0OxaAcAA",
   "modelVersion" : 1,
   "navigatorExport" : {
@@ -8,7 +8,7 @@
       "connectedCategory" : true,
       "created" : 0,
       "creator" : null,
-      "defaultGroupBy" : "k8s.cluster.name",
+      "defaultGroupBy" : "k8s.namespace.name",
       "description" : "",
       "id" : "FTB0OxaAcAA",
       "idDisplayName" : null,
@@ -37,6 +37,7 @@
       "navigatorCategoryGroupDisplayName" : "Containers",
       "navigatorCategoryInstancesName" : "service",
       "navigatorType" : "elemental",
+      "ownerScope" : "organization",
       "sites" : "o11y",
       "systemTypes" : null,
       "uiModel" : {
@@ -51,7 +52,7 @@
         "idTemplate" : "{{k8s.workload.name}} | {{k8s.namespace.name}}",
         "listColumns" : [ {
           "aggregate" : null,
-          "displayName" : "Workload",
+          "displayName" : "Workload | Namespace",
           "format" : "id",
           "metric" : null,
           "property" : "id",
@@ -95,7 +96,7 @@
               "type" : "property"
             } ],
             "resolution" : 60000,
-            "template" : "PODS_FAILED=data(\"k8s.pod.phase\"{{#filter}}, filter={{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"]).equals(4)",
+            "template" : "PODS_FAILED=data(\"k8s.pod.phase\", filter=filter(\"k8s.pod.name\", \"*\") and filter(\"host.name\", \"*\"){{#filter}} and {{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).equals(4).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"])",
             "varName" : "PODS_FAILED"
           },
           "metricSelectors" : [ "k8s.pod.phase" ],
@@ -127,7 +128,7 @@
               "type" : "property"
             } ],
             "resolution" : 60000,
-            "template" : "PODS_PENDING=data(\"k8s.pod.phase\"{{#filter}}, filter={{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"]).below(1, inclusive=True)",
+            "template" : "PODS_PENDING=data(\"k8s.pod.phase\", filter=filter(\"k8s.pod.name\", \"*\") and filter(\"host.name\", \"*\"){{#filter}} and {{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).below(1, inclusive=True).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"])",
             "varName" : "PODS_PENDING"
           },
           "metricSelectors" : [ "k8s.pod.phase" ],
@@ -159,7 +160,7 @@
               "type" : "property"
             } ],
             "resolution" : 60000,
-            "template" : "PODS_RUNNING=data(\"k8s.pod.phase\"{{#filter}}, filter={{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"]).equals(2)",
+            "template" : "PODS_RUNNING=data(\"k8s.pod.phase\", filter=filter(\"k8s.pod.name\", \"*\") and filter(\"host.name\", \"*\"){{#filter}} and {{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).equals(2).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"])",
             "varName" : "PODS_RUNNING"
           },
           "metricSelectors" : [ "k8s.pod.phase" ],
@@ -191,7 +192,7 @@
               "type" : "property"
             } ],
             "resolution" : 60000,
-            "template" : "PODS_SUCCEEDED=data(\"k8s.pod.phase\"{{#filter}}, filter={{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"]).equals(3)",
+            "template" : "PODS_SUCCEEDED=data(\"k8s.pod.phase\", filter=filter(\"k8s.pod.name\", \"*\") and filter(\"host.name\", \"*\"){{#filter}} and {{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).equals(3).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"])",
             "varName" : "PODS_SUCCEEDED"
           },
           "metricSelectors" : [ "k8s.pod.phase" ],
@@ -223,7 +224,7 @@
               "type" : "property"
             } ],
             "resolution" : 60000,
-            "template" : "PODS_UNKNOWN=data(\"k8s.pod.phase\"{{#filter}}, filter={{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"]).above(5, inclusive=True)",
+            "template" : "PODS_UNKNOWN=data(\"k8s.pod.phase\", filter=filter(\"k8s.pod.name\", \"*\") and filter(\"host.name\", \"*\"){{#filter}} and {{{filter}}}{{/filter}}, extrapolation=\"last_value\", maxExtrapolations=2).above(5, inclusive=True).count(by=[\"k8s.workload.name\",\"k8s.namespace.name\"])",
             "varName" : "PODS_UNKNOWN"
           },
           "metricSelectors" : [ "k8s.pod.phase" ],
@@ -300,7 +301,7 @@
         "o11yMetricName" : "Active workloads",
         "o11yMetricUnit" : null,
         "o11yProductName" : "K8s workloads",
-        "o11ySignalflowTemplate" : "A = data('k8s.pod.phase').count(by=['k8s.workload.name']).count().publish(label='A')",
+        "o11ySignalflowTemplate" : "A = data('k8s.pod.phase').count(by=['k8s.workload.name','k8s.namespace.name']).count().publish(label='A')",
         "o11yTrendDisplayMode" : "absolute",
         "propertyColumns" : null,
         "proxyProperties" : null,
