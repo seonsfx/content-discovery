@@ -1,11 +1,12 @@
 {
-  "hashCode": -592016560,
+  "hashCode": -1152396596,
   "id": "FTByWHUAYAA",
   "modelVersion": 1,
   "navigatorExport": {
     "navigator": {
       "aggregateDashboards": [
-        "FY0-gyCAgAA"
+        "FY0-gyCAgAA",
+        "FY0_FwOAgAI"
       ],
       "connectedCategory": true,
       "created": 0,
@@ -40,6 +41,7 @@
       "navigatorCategoryGroupDisplayName": "Containers",
       "navigatorCategoryInstancesName": "service",
       "navigatorType": "elemental",
+      "ownerScope": "organization",
       "relationships": [
         {
           "identifier": "k8spods",
