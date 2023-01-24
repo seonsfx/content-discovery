@@ -79,7 +79,7 @@
         }, {
           "highWatermark" : null,
           "highWatermarkLabel" : null,
-          "label" : "Bytes / req - red",
+          "label" : "Bytes / req - RED",
           "lowWatermark" : null,
           "lowWatermarkLabel" : null,
           "max" : null,
@@ -1243,7 +1243,7 @@
         }, {
           "highWatermark" : null,
           "highWatermarkLabel" : null,
-          "label" : "Bytes / req - red",
+          "label" : "Bytes / req - RED",
           "lowWatermark" : null,
           "lowWatermarkLabel" : null,
           "max" : null,
@@ -1805,7 +1805,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -1979435924,
+  "hashCode" : -1122345622,
   "id" : "DiVWKpTAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
