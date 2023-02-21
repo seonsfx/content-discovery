@@ -9,21 +9,21 @@
       "detectorOrigin": "Standard",
       "id": "FizpuPeAYAA",
       "labelResolutions": {
-        "AWS Route53: Unhealthy status of health check endpoint": 60000
+        "AWS Route 53: Unhealthy status of health check endpoint": 60000
       },
       "lastUpdated": 0,
       "lastUpdatedBy": null,
       "maxDelay": 0,
       "minDelay": null,
-      "name": "AWS Route53: Unhealthy status of health check endpoint",
+      "name": "AWS Route 53: Unhealthy status of health check endpoint",
       "overMTSLimit": false,
       "packageSpecifications": "",
       "parentDetectorId": null,
-      "programText": "from signalfx.detectors.autodetect.infra.aws import route53\nroute53.unhealthy_status_of_health_check_endpoint_detector().publish(\"AWS Route53: Unhealthy status of health check endpoint\")",
+      "programText": "from signalfx.detectors.autodetect.infra.aws import route53\nroute53.unhealthy_status_of_health_check_endpoint_detector().publish(\"AWS Route 53: Unhealthy status of health check endpoint\")",
       "rules": [
         {
-          "description": "AWS Route53: Unhealthy status of health check endpoint",
-          "detectLabel": "AWS Route53: Unhealthy status of health check endpoint",
+          "description": "AWS Route 53: Unhealthy status of health check endpoint",
+          "detectLabel": "AWS Route 53: Unhealthy status of health check endpoint",
           "disabled": false,
           "notifications": null,
           "parameterizedBody": null,
@@ -73,7 +73,7 @@
       ]
     }
   },
-  "hashCode": 1658662369,
+  "hashCode": 1682601089,
   "id": "FizpuPeAYAA",
   "packageType": "DETECTOR"
 }
