@@ -1,5 +1,5 @@
 {
-  "hashCode": 104762502,
+  "hashCode": -54415839,
   "id": "FPk9hznAYAA",
   "modelVersion": 1,
   "navigatorExport": {
@@ -36,7 +36,8 @@
         }
       ],
       "instanceDashboards": [
-        "FPfyWXMAcAA"
+        "FPfyWXMAcAA",
+        "FPfyWnWAcAA"
       ],
       "instanceDisplayText": null,
       "lastUpdated": 0,
