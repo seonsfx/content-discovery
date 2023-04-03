@@ -621,7 +621,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('runtime.jvm.classes.loaded', rollup='sum').sum().publish(label='A')\nB = data('runtime.jvm.classes.unloaded').sum().publish(label='B')",
+      "programText" : "A = data('runtime.jvm.classes.loaded', filter=filter('deployment_environment', '*') and filter('service', '*'), rollup='sum').sum().publish(label='A')\nB = data('runtime.jvm.classes.unloaded', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='B')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -908,6 +908,9 @@
           }, {
             "enabled" : true,
             "property" : "cloud.account.id"
+          }, {
+            "enabled" : true,
+            "property" : "type"
           } ]
         },
         "lineChartOptions" : {
@@ -949,7 +952,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('process.runtime.jvm.memory.allocated', rollup='latest').rateofchange().publish(label='A')",
+      "programText" : "A = data('process.runtime.jvm.memory.allocated', filter=filter('service', '*') and filter('deployment_environment', '*'), rollup='latest').rateofchange().publish(label='A')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -1346,7 +1349,7 @@
       "lastUpdatedBy" : null,
       "name" : ".",
       "options" : {
-        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Kubernetes Pod Metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey metrics from the Kubernetes pod(s) that power this service.\n</p>\n<p align=\"center\">\n<i>Metrics will only populate these charts if your service is running in Kubernetes and you have configured the <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> or the <a href=\"https://docs.signalfx.com/en/latest/integrations/kubernetes/index.html\">SignalFx Smart Agent</a> to monitor your Kubernetes environment.</i>\n</p>",
+        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Kubernetes pod metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey metrics from the Kubernetes pod(s) that power this service.\n</p>\n<p align=\"center\">\n<i>Metrics will only populate these charts if your service is running in Kubernetes and you have configured the <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> or the <a href=\"https://docs.signalfx.com/en/latest/integrations/kubernetes/index.html\">SignalFx Smart Agent</a> to monitor your Kubernetes environment.</i>\n</p>",
         "type" : "Text"
       },
       "packageSpecifications" : "",
@@ -1637,7 +1640,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('executor.threads.active').sum().publish(label='A')\nB = data('executor.threads.idle').sum().publish(label='B')\nC = data('executor.threads.max').sum().publish(label='C')",
+      "programText" : "A = data('executor.threads.active', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='A')\nB = data('executor.threads.idle', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='B')\nC = data('executor.threads.max', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='C')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -2172,6 +2175,21 @@
           }, {
             "enabled" : false,
             "property" : "sf_originatingMetric"
+          }, {
+            "enabled" : true,
+            "property" : "k8s.cluster.name"
+          }, {
+            "enabled" : true,
+            "property" : "os.type"
+          }, {
+            "enabled" : true,
+            "property" : "k8s.node.name"
+          }, {
+            "enabled" : true,
+            "property" : "host.name"
+          }, {
+            "enabled" : true,
+            "property" : "host.id"
           } ]
         },
         "lineChartOptions" : {
@@ -2222,7 +2240,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('runtime.jvm.gc.overhead', rollup='latest').publish(label='A', enable=False)\nB = (A*100).publish(label='B')",
+      "programText" : "A = data('runtime.jvm.gc.overhead', filter=filter('service', '*') and filter('deployment_environment', '*'), rollup='latest').publish(label='A', enable=False)\nB = (A*100).publish(label='B')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -2706,7 +2724,7 @@
       "lastUpdatedBy" : null,
       "name" : ".",
       "options" : {
-        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Host Metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey system-level metrics for the host(s) that power this service\n</p>\n<p align=\"center\">\n<i>Metrics will only populate those charts if you are forwarding your application trace spans through a local <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> (running as an agent) or through the <a href=\"https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html#apm-smart-agent\">SignalFx Smart Agent</a> to establish the correlation between your application and your infrastructure.</i>\n</p>",
+        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Host metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey system-level metrics for the host(s) that power this service\n</p>\n<p align=\"center\">\n<i>Metrics will only populate those charts if you are forwarding your application trace spans through a local <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> (running as an agent) or through the <a href=\"https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html#apm-smart-agent\">SignalFx Smart Agent</a> to establish the correlation between your application and your infrastructure.</i>\n</p>",
         "type" : "Text"
       },
       "packageSpecifications" : "",
@@ -2778,7 +2796,7 @@
       "lastUpdatedBy" : null,
       "name" : ".",
       "options" : {
-        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Host Metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey system-level metrics for the host(s) that power this service\n</p>\n<p align=\"center\">\n<i>Metrics will only populate those charts if you are forwarding your application trace spans through a local <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> (running as an agent) or through the <a href=\"https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html#apm-smart-agent\">SignalFx Smart Agent</a> to establish the correlation between your application and your infrastructure.</i>\n</p>",
+        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Host metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey system-level metrics for the host(s) that power this service\n</p>\n<p align=\"center\">\n<i>Metrics will only populate those charts if you are forwarding your application trace spans through a local <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> (running as an agent) or through the <a href=\"https://docs.signalfx.com/en/latest/apm/apm-getting-started/apm-smart-agent.html#apm-smart-agent\">SignalFx Smart Agent</a> to establish the correlation between your application and your infrastructure.</i>\n</p>",
         "type" : "Text"
       },
       "packageSpecifications" : "",
@@ -3372,7 +3390,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('runtime.jvm.gc.pause.totalTime').sum().publish(label='A')\nE = data('runtime.jvm.gc.pause.count').sum().publish(label='E')",
+      "programText" : "A = data('runtime.jvm.gc.pause.totalTime', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='A')\nE = data('runtime.jvm.gc.pause.count', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='E')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -3495,7 +3513,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('runtime.jvm.gc.live.data.size').sum().publish(label='A')\nC = data('runtime.jvm.memory.max', filter=filter('area', 'heap')).sum().publish(label='C')\nD = data('runtime.jvm.memory.used', filter=filter('area', 'heap')).sum().publish(label='D')",
+      "programText" : "A = data('runtime.jvm.gc.live.data.size', filter=filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='A')\nC = data('runtime.jvm.memory.max', filter=filter('area', 'heap') and filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='C')\nD = data('runtime.jvm.memory.used', filter=filter('area', 'heap') and filter('deployment_environment', '*') and filter('service', '*')).sum().publish(label='D')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -3512,7 +3530,7 @@
       "lastUpdatedBy" : null,
       "name" : ".",
       "options" : {
-        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Kubernetes Pod Metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey metrics from the Kubernetes pod(s) that power this service.\n</p>\n<p align=\"center\">\n<i>Metrics will only populate these charts if your service is running in Kubernetes and you have configured the <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> or the <a href=\"https://docs.signalfx.com/en/latest/integrations/kubernetes/index.html\">SignalFx Smart Agent</a> to monitor your Kubernetes environment.</i>\n</p>",
+        "markdown" : "<table width=\"100%\" height=\"40%\" rules=\"none\">\n<tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">Kubernetes pod metrics</font>\n</td></tr>\n</table>\n<p align=\"center\"><br />\nKey metrics from the Kubernetes pod(s) that power this service.\n</p>\n<p align=\"center\">\n<i>Metrics will only populate these charts if your service is running in Kubernetes and you have configured the <a href=\"https://github.com/signalfx/splunk-otel-collector\">OpenTelemetry Collector</a> or the <a href=\"https://docs.signalfx.com/en/latest/integrations/kubernetes/index.html\">SignalFx Smart Agent</a> to monitor your Kubernetes environment.</i>\n</p>",
         "type" : "Text"
       },
       "packageSpecifications" : "",
@@ -4027,7 +4045,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('runtime.jvm.threads.live', rollup='sum').sum().publish(label='A')\nB = data('runtime.jvm.threads.peak', rollup='sum').sum().publish(label='B')",
+      "programText" : "A = data('runtime.jvm.threads.live', filter=filter('deployment_environment', '*') and filter('service', '*'), rollup='sum').sum().publish(label='A')\nB = data('runtime.jvm.threads.peak', filter=filter('deployment_environment', '*') and filter('service', '*'), rollup='sum').sum().publish(label='B')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -4121,10 +4139,10 @@
       "contextId" : "FUj-3oRAgAA",
       "created" : 0,
       "creator" : null,
-      "id" : "FVOmLg_AgAA",
+      "id" : "FsdYtP7AgAM",
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
-      "propertyName" : "sf_service",
+      "propertyName" : "service",
       "propertyValue" : "",
       "targets" : [ {
         "dashboardGroupId" : "FUj-r9KAYAA",
@@ -4330,7 +4348,7 @@
           "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Environment" ]
+          "value" : [ "Choose environment" ]
         }, {
           "alias" : "Service",
           "applyIfExists" : false,
@@ -4341,7 +4359,7 @@
           "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Service" ]
+          "value" : [ "Choose service" ]
         } ]
       },
       "groupId" : "FUj-r9KAYAA",
@@ -4482,7 +4500,7 @@
           "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Environment" ]
+          "value" : [ "Choose environment" ]
         }, {
           "alias" : "Service",
           "applyIfExists" : false,
@@ -4493,7 +4511,7 @@
           "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Service" ]
+          "value" : [ "Choose service" ]
         }, {
           "alias" : "Endpoint",
           "applyIfExists" : false,
@@ -4504,7 +4522,7 @@
           "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Endpoint" ]
+          "value" : [ "Choose endpoint" ]
         } ]
       },
       "groupId" : "FUj-r9KAYAA",
@@ -4603,10 +4621,10 @@
           "preferredSuggestions" : [ ],
           "property" : "deployment_environment",
           "propertyMappings" : [ "deployment_environment" ],
-          "replaceOnly" : false,
+          "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Environment" ]
+          "value" : [ "Choose environment" ]
         }, {
           "alias" : "Service",
           "applyIfExists" : false,
@@ -4614,10 +4632,10 @@
           "preferredSuggestions" : [ ],
           "property" : "service",
           "propertyMappings" : [ "service" ],
-          "replaceOnly" : false,
+          "replaceOnly" : true,
           "required" : true,
           "restricted" : false,
-          "value" : [ "Choose Service" ]
+          "value" : [ "Choose service" ]
         }, {
           "alias" : "Host name",
           "applyIfExists" : false,
@@ -4711,7 +4729,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 512431112,
+  "hashCode" : 1458419499,
   "id" : "FUj-r9KAYAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
