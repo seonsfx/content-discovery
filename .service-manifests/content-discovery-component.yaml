@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+    name: content-discovery
+    title: content-discovery
+    functionalDomain: []
+    description: ""
+    annotations:
+        backstage.io/source-location: url:https://cd.splunkdev.com/observability/shared/content-discovery
+        backstage.io/view-url: https://cd.splunkdev.com/observability/shared/content-discovery/-/blob/master/.service-manifests/content-discovery-component.yaml
+        backstage.io/edit-url: https://cd.splunkdev.com/observability/shared/content-discovery/-/edit/master/.service-manifests/content-discovery-component.yaml
+        splunk.com/slack-url: ""
+        splunk.com/issue-tracker-url: ""
+    links:
+        - title: Overview
+          url: ""
+        - title: ERD/RFC
+          url: ""
+        - title: Ops Runbook
+          url: ""
+spec:
+    lifecycle: production
+    type: product
+    owner: group:EO-NEEDS-OWNER
