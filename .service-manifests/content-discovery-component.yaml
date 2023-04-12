@@ -13,11 +13,11 @@ metadata:
         splunk.com/issue-tracker-url: ""
     links:
         - title: Overview
-          url: ""
+          url: TODO
         - title: ERD/RFC
-          url: ""
+          url: TODO
         - title: Ops Runbook
-          url: ""
+          url: TODO
 spec:
     lifecycle: production
     type: product
