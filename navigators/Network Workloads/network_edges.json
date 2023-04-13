@@ -1,5 +1,5 @@
 {
-  "hashCode": 1248994335,
+  "hashCode": 1747778242,
   "id": "FYgqVToAYAI",
   "modelVersion": 1,
   "navigatorExport": {
@@ -239,7 +239,25 @@
         ],
         "type": "elemental",
         "unreleased": false
-      }
+      },
+      "visualizations": [
+        {
+          "configuration": {
+            "actions": {
+              "showColorBy": false,
+              "showGroupBy": false,
+              "showNavigatorSettings": false,
+              "showOutliers": false
+            }
+          },
+          "defaultVisualization": true,
+          "type": "networkGraph",
+          "views": [
+            "instance",
+            "aggregate"
+          ]
+        }
+      ]
     }
   },
   "packageType": "NAVIGATOR"
