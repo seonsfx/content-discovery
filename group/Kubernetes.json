@@ -2404,31 +2404,7 @@
         "colorScale2" : null,
         "hideMissingValues" : false,
         "legendOptions" : {
-          "fields" : [ {
-            "enabled" : false,
-            "property" : "kubernetes_cluster"
-          }, {
-            "enabled" : false,
-            "property" : "kubernetes_name"
-          }, {
-            "enabled" : false,
-            "property" : "kubernetes_namespace"
-          }, {
-            "enabled" : false,
-            "property" : "sf_originatingMetric"
-          }, {
-            "enabled" : false,
-            "property" : "metric_source"
-          }, {
-            "enabled" : true,
-            "property" : "sf_metric"
-          }, {
-            "enabled" : false,
-            "property" : "uid"
-          }, {
-            "enabled" : true,
-            "property" : "k8s.cluster.name"
-          } ]
+          "fields" : null
         },
         "maximumPrecision" : 4,
         "noDataOptions" : {
@@ -2481,7 +2457,7 @@
         } ],
         "refreshInterval" : 5000,
         "secondaryVisualization" : "Sparkline",
-        "sortBy" : "",
+        "sortBy" : "-value",
         "time" : {
           "range" : 900000,
           "rangeEnd" : 0,
@@ -2491,7 +2467,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('k8s.daemonset.current_scheduled_nodes').sum(by=['k8s.cluster.name']).count().publish(label='A')\nB = data('k8s.daemonset.desired_scheduled_nodes').sum(by=['k8s.cluster.name']).count().publish(label='B')\nC = data('k8s.daemonset.misscheduled_nodes').sum(by=['k8s.cluster.name']).count().publish(label='C')\nD = data('k8s.daemonset.ready_nodes').sum(by=['k8s.cluster.name']).count().publish(label='D')\nAB = alerts(autodetect_id='FAUcoK8AcAA').publish(label='Autodetect alerts')",
+      "programText" : "A = data('k8s.daemonset.current_scheduled_nodes').sum().publish(label='A')\nB = data('k8s.daemonset.desired_scheduled_nodes').sum().publish(label='B')\nC = data('k8s.daemonset.misscheduled_nodes').sum().publish(label='C')\nD = data('k8s.daemonset.ready_nodes').sum().publish(label='D')\nAB = alerts(autodetect_id='FAUcoK8AcAA').publish(label='Autodetect alerts')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -2924,7 +2900,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('container.cpu.utilization', extrapolation='last_value').count(by=['k8s.node.name']).publish(label='A')",
+      "programText" : "A = data('k8s.pod.phase', extrapolation='last_value').count(by=['k8s.node.name']).publish(label='A')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -3332,7 +3308,7 @@
         "unitPrefix" : "Binary"
       },
       "packageSpecifications" : "",
-      "programText" : "C = data('system.memory.usage', filter=filter('k8s.cluster.name', '*') and (not filter('state', 'free'))).mean(over='1m').top(count=10).sum(by=['k8s.node.name', 'k8s.cluster.name']).publish(label='C')",
+      "programText" : "C = data('system.memory.usage', filter=filter('k8s.cluster.name', '*') and filter('state', 'used')).mean(over='1m').top(count=10).sum(by=['k8s.node.name', 'k8s.cluster.name']).publish(label='C')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -3347,7 +3323,7 @@
       "importOf" : "FXdz8abAcAA",
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
-      "name" : "Top nodes by network usage (bytes)",
+      "name" : "Top nodes by network usage (bytes / sec)",
       "options" : {
         "colorBy" : "Dimension",
         "colorScale2" : null,
@@ -3441,9 +3417,9 @@
           "label" : "A",
           "paletteIndex" : null,
           "plotType" : null,
-          "valuePrefix" : "",
-          "valueSuffix" : "",
-          "valueUnit" : null,
+          "valuePrefix" : null,
+          "valueSuffix" : null,
+          "valueUnit" : "Byte",
           "yAxis" : 0
         } ],
         "refreshInterval" : 5000,
@@ -4582,7 +4558,7 @@
           "plotType" : null,
           "valuePrefix" : null,
           "valueSuffix" : null,
-          "valueUnit" : null,
+          "valueUnit" : "Byte",
           "yAxis" : 0
         } ],
         "refreshInterval" : 5000,
@@ -12945,8 +12921,6 @@
       "name" : "Authentication logs",
       "options" : {
         "columns" : [ {
-          "name" : "severity"
-        }, {
           "name" : "time"
         }, {
           "name" : "k8s.cluster.name"
@@ -12965,7 +12939,7 @@
         "type" : "LogsChart"
       },
       "packageSpecifications" : "",
-      "programText" : "logs(filter=field('source') == '/var/log/secure' and field('k8s.cluster.name') == 'bits-env-test').publish()",
+      "programText" : "logs(filter=(field('source') == '/var/log/secure' or field('source') == '/var/log/auth.log') and field('k8s.node.name') == '**').publish()",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -12983,8 +12957,6 @@
       "name" : "System logs",
       "options" : {
         "columns" : [ {
-          "name" : "severity"
-        }, {
           "name" : "time"
         }, {
           "name" : "k8s.cluster.name"
@@ -13020,7 +12992,7 @@
       "lastUpdatedBy" : null,
       "name" : ".",
       "options" : {
-        "markdown" : "<table width=\"100%\" height=\"10%\" rules=\"none\"><tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">K8s host machine logs</font>\n</td></tr></table>\n\n<p align=\"center\" ><br /><font>Charts below refer to the K8s host machines' logs. </p>\n<p align=\"center\" > To enable K8s host machines' logs <a href='https://docs.splunk.com/Observability/gdi/opentelemetry/kubernetes-config-logs.html#add-log-files-from-kubernetes-host-machines-or-volumes'>refer to this doc</a>.  Add <code>/var/log/syslog</code> or <code>/var/log/messages</code> and <code>/var/log/secure</code> in logCollection's extraFileLogs for system logs and authentication logs respectively. </p>",
+        "markdown" : "<table width=\"100%\" height=\"10%\" rules=\"none\"><tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">K8s host machine logs</font>\n</td></tr></table>\n\n<p align=\"center\" ><br /><font>Charts below refer to the K8s host machines' logs. </p>\n<p align=\"center\" > To enable K8s host machines' logs <a href='https://docs.splunk.com/Observability/gdi/opentelemetry/kubernetes-config-logs.html#add-log-files-from-kubernetes-host-machines-or-volumes'>refer to this doc</a>.\nTo get <strong>System logs</strong> add <code>/var/log/syslog</code> or <code>/var/log/messages</code> in logCollection's extraFileLogs based on Ubuntu or CentOS respectively and  \nto get <strong>Authentication logs</strong>, add <code>/var/log/auth.log</code> or <code>/var/log/secure.log</code> in logCollection's extraFileLogs based on Ubuntu or CentOS respectively.</p>",
         "type" : "Text"
       },
       "packageSpecifications" : "",
@@ -14776,7 +14748,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1881495000,
+  "hashCode" : -12346524,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
