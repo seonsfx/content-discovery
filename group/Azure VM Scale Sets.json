@@ -2034,7 +2034,7 @@
         "sources" : null,
         "time" : null,
         "variables" : [ {
-          "alias" : "resource_type",
+          "alias" : "Resource type",
           "applyIfExists" : false,
           "description" : "",
           "preferredSuggestions" : [ "Microsoft.Compute/virtualMachineScaleSets" ],
@@ -2045,7 +2045,7 @@
           "restricted" : true,
           "value" : [ "Microsoft.Compute/virtualMachineScaleSets" ]
         }, {
-          "alias" : "azure_resource_name",
+          "alias" : "Resource name",
           "applyIfExists" : false,
           "description" : "",
           "preferredSuggestions" : [ ],
@@ -2054,9 +2054,9 @@
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
-          "value" : ""
+          "value" : [ "Choose resource name" ]
         }, {
-          "alias" : "azure_resource_id",
+          "alias" : "Resource id",
           "applyIfExists" : false,
           "description" : "",
           "preferredSuggestions" : [ ],
@@ -2163,7 +2163,7 @@
         "sources" : null,
         "time" : null,
         "variables" : [ {
-          "alias" : "resource_type",
+          "alias" : "Resource type",
           "applyIfExists" : false,
           "description" : "",
           "preferredSuggestions" : [ "Microsoft.Compute/virtualMachineScaleSets" ],
@@ -2228,7 +2228,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -2020764576,
+  "hashCode" : 473928213,
   "id" : "DiVWV8DAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"

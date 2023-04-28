@@ -2043,7 +2043,7 @@
         "sources" : null,
         "time" : null,
         "variables" : [ {
-          "alias" : "host",
+          "alias" : "Host",
           "applyIfExists" : false,
           "description" : "Windows host",
           "preferredSuggestions" : [ ],
@@ -2052,7 +2052,7 @@
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
-          "value" : ""
+          "value" : [ "Choose host" ]
         } ]
       },
       "groupId" : "DiVWXRAAcAA",
@@ -2104,7 +2104,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -659904827,
+  "hashCode" : 1816186295,
   "id" : "DiVWXRAAcAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"

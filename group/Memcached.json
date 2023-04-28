@@ -1767,7 +1767,7 @@
         "sources" : null,
         "time" : null,
         "variables" : [ {
-          "alias" : "host",
+          "alias" : "Host",
           "applyIfExists" : false,
           "description" : "Memcached server",
           "preferredSuggestions" : [ ],
@@ -1930,7 +1930,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1611910098,
+  "hashCode" : 270982869,
   "id" : "DiVWxU4AgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"

@@ -1123,7 +1123,7 @@
         "sources" : null,
         "time" : null,
         "variables" : [ {
-          "alias" : "distribution",
+          "alias" : "Distribution",
           "applyIfExists" : false,
           "description" : "CloudFront distribution",
           "preferredSuggestions" : [ ],
@@ -1282,7 +1282,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -2056505620,
+  "hashCode" : 788424987,
   "id" : "DiVWHP9AYAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
