@@ -3115,7 +3115,7 @@
           "replaceOnly" : false,
           "required" : true,
           "restricted" : false,
-          "value" : ""
+          "value" : [ "Choose application" ]
         } ]
       },
       "groupId" : "D6yim_xAgAA",
@@ -3174,7 +3174,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1938931147,
+  "hashCode" : -848262137,
   "id" : "D6yim_xAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
