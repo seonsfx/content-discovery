@@ -13516,7 +13516,7 @@
       "created" : 0,
       "creator" : null,
       "customProperties" : { },
-      "description" : "Chart will be visible only when there are nodes in not ready condition. Grouped by k8s cluster name.",
+      "description" : "The chart will be visible only when nodes are in not ready condition, and are grouped by k8s cluster.",
       "id" : "Fx2fl-AAYAA",
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
@@ -15410,7 +15410,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -1921760460,
+  "hashCode" : -1071145312,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
