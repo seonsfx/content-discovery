@@ -13479,7 +13479,7 @@
           "noDataMessage" : "Currently, no data is available for this chart."
         },
         "programOptions" : {
-          "disableSampling" : false,
+          "disableSampling" : true,
           "maxDelay" : 0,
           "minimumResolution" : 0,
           "timezone" : null
@@ -13516,7 +13516,7 @@
       "created" : 0,
       "creator" : null,
       "customProperties" : { },
-      "description" : "The chart will be visible only when nodes are in not ready condition, and are grouped by k8s cluster.",
+      "description" : "The chart will be visible only when nodes are in not ready condition(value 0) or unknown(value -1) and grouped by k8s cluster.",
       "id" : "Fx2fl-AAYAA",
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
@@ -13527,16 +13527,16 @@
         "colorScale" : null,
         "colorScale2" : [ {
           "gt" : null,
-          "gte" : 1.0,
+          "gte" : 0.0,
           "lt" : null,
           "lte" : null,
-          "paletteIndex" : 20
+          "paletteIndex" : 16
         }, {
           "gt" : null,
           "gte" : null,
-          "lt" : 1.0,
+          "lt" : 0.0,
           "lte" : null,
-          "paletteIndex" : 16
+          "paletteIndex" : 0
         } ],
         "groupBy" : [ "k8s.cluster.name" ],
         "noDataOptions" : {
@@ -13545,7 +13545,7 @@
           "noDataMessage" : null
         },
         "programOptions" : {
-          "disableSampling" : false,
+          "disableSampling" : true,
           "maxDelay" : 0,
           "minimumResolution" : 0,
           "timezone" : null
@@ -15410,7 +15410,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -1071145312,
+  "hashCode" : -1714868621,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
