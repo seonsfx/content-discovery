@@ -5,24 +5,24 @@
       "created": 0,
       "creator": null,
       "customProperties": null,
-      "description": "Alerts when Memory utilization is above threshold",
+      "description": "Alerts when sudden change in memory utilization",
       "detectorOrigin": "Standard",
-      "id": "F63pKAAAYAA",
+      "id": "F7vC_VlAYAI",
       "labelResolutions": {
-        "AWS EC2: Memory utilization expected to reach the limit": 1000
+        "AWS EC2: Sudden change in memory utilization": 5000
       },
       "lastUpdated": 0,
       "lastUpdatedBy": null,
       "maxDelay": 0,
       "minDelay": null,
-      "name": "AWS EC2: Memory utilization expected to reach the limit",
+      "name": "AWS EC2: Sudden change in memory utilization",
       "overMTSLimit": false,
       "packageSpecifications": "",
-      "programText": "from signalfx.detectors.autodetect.infra.aws import ec2\nec2.memory_utilization_detector().publish('AWS EC2: Memory utilization expected to reach the limit')",
+      "programText": "from signalfx.detectors.autodetect.infra.aws import ec2\nec2.memory_utilization_detector().publish('AWS EC2: Sudden change in memory utilization')",
       "rules": [
         {
-          "description": "AWS EC2: Memory utilization expected to reach the limit",
-          "detectLabel": "AWS EC2: Memory utilization expected to reach the limit",
+          "description": "AWS EC2: Sudden change in memory utilization",
+          "detectLabel": "AWS EC2: Sudden change in memory utilization",
           "disabled": false,
           "notifications": null,
           "parameterizedBody": null,
@@ -40,7 +40,16 @@
       "timezone": null,
       "visualizationOptions": {
         "disableSampling": false,
-        "publishLabelOptions": [],
+        "publishLabelOptions": [
+          {
+            "displayName": "Memory utilization",
+            "label": "Memory utilization",
+            "paletteIndex": null,
+            "valuePrefix": null,
+            "valueSuffix": null,
+            "valueUnit": null
+          }
+        ],
         "showDataMarkers": false,
         "showEventLines": false,
         "time": {
@@ -65,7 +74,7 @@
       ]
     }
   },
-  "hashCode": -785469691,
-  "id": "F63pKAAAYAA",
+  "hashCode": -477653717,
+  "id": "F7vC_VlAYAI",
   "packageType": "DETECTOR"
 }
