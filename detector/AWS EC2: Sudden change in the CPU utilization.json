@@ -1,0 +1,104 @@
+{
+  "detectorExport": {
+    "detector": {
+      "authorizedWriters": null,
+      "created": 0,
+      "creator": null,
+      "customProperties": null,
+      "description": "Alerts when sudden change in the CPU utilization",
+      "detectorOrigin": "Standard",
+      "id": "F7vDCq0AgAE",
+      "labelResolutions": {
+        "AWS EC2: Sudden change in the CPU utilization": 5000
+      },
+      "lastUpdated": 0,
+      "lastUpdatedBy": null,
+      "maxDelay": 0,
+      "minDelay": null,
+      "name": "AWS EC2: Sudden change in the CPU utilization",
+      "overMTSLimit": false,
+      "packageSpecifications": "",
+      "programText": "from signalfx.detectors.autodetect.infra.aws import ec2\nec2.cpu_utilization_detector().publish('AWS EC2: Sudden change in the CPU utilization')",
+      "rules": [
+        {
+          "description": "AWS EC2: Sudden change in the CPU utilization",
+          "detectLabel": "AWS EC2: Sudden change in the CPU utilization",
+          "disabled": false,
+          "notifications": null,
+          "parameterizedBody": null,
+          "parameterizedSubject": null,
+          "runbookUrl": null,
+          "severity": "Critical",
+          "tip": null
+        }
+      ],
+      "sf_metricsInObjectProgramText": [
+        "^aws.ec2.cpu.utilization"
+      ],
+      "tags": null,
+      "teams": null,
+      "timezone": null,
+      "visualizationOptions": {
+        "disableSampling": false,
+        "publishLabelOptions": [
+          {
+            "displayName": "CPU utilization",
+            "label": "CPU utilization",
+            "paletteIndex": null,
+            "valuePrefix": null,
+            "valueSuffix": null,
+            "valueUnit": null
+          }
+        ],
+        "showDataMarkers": false,
+        "showEventLines": false,
+        "time": {
+          "range": 10800000,
+          "rangeEnd": 0,
+          "type": "relative"
+        }
+      },
+      "importQualifiers": [
+        {
+          "filters": [
+            {
+              "not": false,
+              "property": "namespace",
+              "values": [
+                "AWS/EC2"
+              ]
+            },
+            {
+              "not": false,
+              "property": "stat",
+              "values": [
+                "mean"
+              ]
+            },
+            {
+              "not": false,
+              "property": "InstanceId",
+              "values": []
+            }
+          ],
+          "metric": "CPUUtilization"
+        },
+        {
+          "filters": [
+            {
+              "not": false,
+              "property": "cloud.provider",
+              "values": [
+                "aws"
+              ]
+            }
+          ],
+          "metric": "cpu.utilization"
+        }
+      ]
+    }
+  },
+  "hashCode": -1295711066,
+  "id": "F7vDCq0AgAE",
+  "packageType": "DETECTOR"
+}
