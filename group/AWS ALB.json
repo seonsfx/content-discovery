@@ -96,11 +96,11 @@
         "hideMissingValues" : true,
         "legendOptions" : {
           "fields" : [ {
-            "enabled" : false,
-            "property" : "AWSUniqueId"
-          }, {
             "enabled" : true,
             "property" : "LoadBalancer"
+          }, {
+            "enabled" : false,
+            "property" : "AWSUniqueId"
           }, {
             "enabled" : false,
             "property" : "sf_originatingMetric"
@@ -149,7 +149,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('ConsumedLCUs', filter=filter('namespace', 'AWS/ApplicationELB') and filter('stat', 'mean') and filter('AvailabilityZone', '*')).sum(by=['LoadBalancer']).top(count=5).publish(label='A')",
+      "programText" : "A = data('ConsumedLCUs', filter=filter('namespace', 'AWS/ApplicationELB') and filter('stat', 'mean')).sum(by=['LoadBalancer']).top(count=5).publish(label='A')",
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
@@ -2628,6 +2628,207 @@
       "relatedDetectorIds" : [ ],
       "tags" : null
     }
+  }, {
+    "chart" : {
+      "autoDetectRelatedDetectorIds" : [ ],
+      "created" : 0,
+      "creator" : null,
+      "customProperties" : { },
+      "description" : "",
+      "id" : "GCvs1v7AgAM",
+      "importOf" : "FxmxztMAcAA",
+      "lastUpdated" : 0,
+      "lastUpdatedBy" : null,
+      "name" : "ALB logs",
+      "options" : {
+        "columns" : [ {
+          "name" : "_time"
+        }, {
+          "name" : "elb"
+        }, {
+          "name" : "action"
+        }, {
+          "name" : "ELBStatusCode"
+        }, {
+          "name" : "source"
+        }, {
+          "name" : "sourcetype"
+        }, {
+          "name" : "_raw"
+        } ],
+        "defaultConnection" : "*",
+        "sortOptions" : null,
+        "time" : {
+          "range" : 900000,
+          "rangeEnd" : 0,
+          "type" : "relative"
+        },
+        "type" : "LogsChart"
+      },
+      "packageSpecifications" : "",
+      "programText" : "logs(filter=field('sourcetype') == 'aws:elb:accesslogs' and field('elb_type') == 'ALB').publish()",
+      "relatedDetectorIds" : [ ],
+      "tags" : null
+    }
+  }, {
+    "chart" : {
+      "autoDetectRelatedDetectorIds" : [ ],
+      "created" : 0,
+      "creator" : null,
+      "customProperties" : { },
+      "description" : "",
+      "id" : "GCvs16BAcAE",
+      "importOf" : "Fxm3MKtAgAA",
+      "lastUpdated" : 0,
+      "lastUpdatedBy" : null,
+      "name" : ".",
+      "options" : {
+        "markdown" : "<table width=\"100%\" height=\"10%\" rules=\"none\"><tr><td valign=\"middle\" align=\"center\" bgcolor=\"#4682B4\">\n<font size=\"5\" color=\"white\">ALB logs</font>\n</td></tr></table>\n<p align=\"center\" >These charts refer to the Application load balancer logs. To configure Application load balancer logs follow this <a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html\">AWS documentation</a>.\nTo configure the logs on Splunk Enterprise/Cloud follow <a href='https://quickdraw.splunk.com/redirect/?product=Observability&location=ootb.cloudwatch' target='_blank'> this Splunk Add-on for AWS documentation</a>.\nFor more information on sending logs to Splunk Log Observer Connect, see <a href='https://quickdraw.splunk.com/redirect/?product=Observability&location=azurescalesets.dashboard.LOC&version=current' target='_blank'>Log Observer Connect documentation</a>.\n</p>",
+        "type" : "Text"
+      },
+      "packageSpecifications" : "",
+      "programText" : "",
+      "relatedDetectorIds" : [ ],
+      "tags" : null
+    }
+  }, {
+    "chart" : {
+      "autoDetectRelatedDetectorIds" : [ ],
+      "created" : 0,
+      "creator" : null,
+      "customProperties" : { },
+      "description" : "",
+      "id" : "GDDxGPrAYBM",
+      "lastUpdated" : 0,
+      "lastUpdatedBy" : null,
+      "name" : "Target groups overview",
+      "options" : {
+        "groupBy" : [ "LoadBalancer" ],
+        "groupBySort" : "Descending",
+        "hideMissingValues" : false,
+        "legendOptions" : {
+          "fields" : [ {
+            "enabled" : true,
+            "property" : "LoadBalancer"
+          }, {
+            "enabled" : true,
+            "property" : "aws_region"
+          }, {
+            "enabled" : true,
+            "property" : "TargetGroup"
+          }, {
+            "enabled" : true,
+            "property" : "sf_metric"
+          }, {
+            "enabled" : true,
+            "property" : "aws_create_time"
+          }, {
+            "enabled" : true,
+            "property" : "sf_originatingMetric"
+          }, {
+            "enabled" : true,
+            "property" : "computationId"
+          } ]
+        },
+        "maximumPrecision" : 4,
+        "programOptions" : {
+          "disableSampling" : false,
+          "maxDelay" : 0,
+          "minimumResolution" : 0,
+          "timezone" : null
+        },
+        "publishLabelOptions" : [ {
+          "displayName" : "Healthy host count",
+          "label" : "A",
+          "valuePrefix" : "",
+          "valueSuffix" : "",
+          "valueUnit" : null
+        } ],
+        "refreshInterval" : 60000,
+        "sortBy" : "",
+        "time" : {
+          "range" : 900000,
+          "rangeEnd" : 0,
+          "type" : "relative"
+        },
+        "timestampHidden" : false,
+        "type" : "TableChart",
+        "unitPrefix" : "Metric"
+      },
+      "packageSpecifications" : "",
+      "programText" : "A = data('HealthyHostCount', filter=filter('namespace', 'AWS/ApplicationELB') and filter('AvailabilityZone', '*') and filter('stat', 'sum')).sum(by=['TargetGroup', 'LoadBalancer', 'aws_create_time', 'aws_region']).publish(label='A')",
+      "relatedDetectorIds" : [ ],
+      "tags" : null
+    }
+  }, {
+    "chart" : {
+      "autoDetectRelatedDetectorIds" : [ ],
+      "created" : 0,
+      "creator" : null,
+      "customProperties" : { },
+      "description" : "",
+      "id" : "GDEH9RLAgAI",
+      "lastUpdated" : 0,
+      "lastUpdatedBy" : null,
+      "name" : "Target groups overview",
+      "options" : {
+        "groupBy" : [ "LoadBalancer" ],
+        "groupBySort" : "Descending",
+        "hideMissingValues" : false,
+        "legendOptions" : {
+          "fields" : [ {
+            "enabled" : true,
+            "property" : "LoadBalancer"
+          }, {
+            "enabled" : true,
+            "property" : "aws_region"
+          }, {
+            "enabled" : true,
+            "property" : "TargetGroup"
+          }, {
+            "enabled" : true,
+            "property" : "sf_metric"
+          }, {
+            "enabled" : true,
+            "property" : "aws_create_time"
+          }, {
+            "enabled" : true,
+            "property" : "sf_originatingMetric"
+          }, {
+            "enabled" : true,
+            "property" : "computationId"
+          } ]
+        },
+        "maximumPrecision" : 4,
+        "programOptions" : {
+          "disableSampling" : false,
+          "maxDelay" : 0,
+          "minimumResolution" : 0,
+          "timezone" : null
+        },
+        "publishLabelOptions" : [ {
+          "displayName" : "Healthy host count",
+          "label" : "A",
+          "valuePrefix" : "",
+          "valueSuffix" : "",
+          "valueUnit" : null
+        } ],
+        "refreshInterval" : 60000,
+        "sortBy" : "",
+        "time" : {
+          "range" : 900000,
+          "rangeEnd" : 0,
+          "type" : "relative"
+        },
+        "timestampHidden" : false,
+        "type" : "TableChart",
+        "unitPrefix" : "Metric"
+      },
+      "packageSpecifications" : "",
+      "programText" : "A = data('HealthyHostCount', filter=filter('namespace', 'AWS/ApplicationELB') and filter('AvailabilityZone', '*') and filter('stat', 'sum')).sum(by=['TargetGroup', 'LoadBalancer', 'aws_create_time', 'aws_region']).publish(label='A')",
+      "relatedDetectorIds" : [ ],
+      "tags" : null
+    }
   } ],
   "crossLinkExports" : [ ],
   "dashboardExports" : [ {
@@ -2730,6 +2931,12 @@
         "height" : 1,
         "row" : 4,
         "width" : 4
+      }, {
+        "chartId" : "GDDxGPrAYBM",
+        "column" : 0,
+        "height" : 1,
+        "row" : 5,
+        "width" : 12
       } ],
       "created" : 0,
       "creator" : null,
@@ -2855,6 +3062,12 @@
         "height" : 1,
         "row" : 4,
         "width" : 4
+      }, {
+        "chartId" : "GDEH9RLAgAI",
+        "column" : 0,
+        "height" : 1,
+        "row" : 5,
+        "width" : 12
       } ],
       "created" : 0,
       "creator" : null,
@@ -2892,6 +3105,45 @@
       "selectedEventOverlays" : null,
       "tags" : null
     }
+  }, {
+    "dashboard" : {
+      "authorizedWriters" : null,
+      "chartDensity" : "DEFAULT",
+      "charts" : [ {
+        "chartId" : "GCvs16BAcAE",
+        "column" : 0,
+        "height" : 1,
+        "row" : 0,
+        "width" : 12
+      }, {
+        "chartId" : "GCvs1v7AgAM",
+        "column" : 0,
+        "height" : 3,
+        "row" : 1,
+        "width" : 12
+      } ],
+      "created" : 0,
+      "creator" : null,
+      "customProperties" : null,
+      "description" : "",
+      "discoveryOptions" : null,
+      "eventOverlays" : null,
+      "filters" : {
+        "sources" : null,
+        "time" : null,
+        "variables" : null
+      },
+      "groupId" : "DiVWEPsAgAA",
+      "groupName" : "AWS ALB",
+      "id" : "GCvLuNrAgAI",
+      "lastUpdated" : 0,
+      "lastUpdatedBy" : null,
+      "maxDelayOverride" : null,
+      "name" : "AWS ALB logs",
+      "permissions" : null,
+      "selectedEventOverlays" : [ ],
+      "tags" : null
+    }
   } ],
   "groupExport" : {
     "group" : {
@@ -2910,8 +3162,14 @@
         "descriptionOverride" : null,
         "filtersOverride" : null,
         "nameOverride" : null
+      }, {
+        "configId" : "GCvLuNrAgAM",
+        "dashboardId" : "GCvLuNrAgAI",
+        "descriptionOverride" : null,
+        "filtersOverride" : null,
+        "nameOverride" : null
       } ],
-      "dashboards" : [ "EOU5vihAgHc", "EOU5-hXAcCA" ],
+      "dashboards" : [ "EOU5vihAgHc", "EOU5-hXAcCA", "GCvLuNrAgAI" ],
       "description" : "Dashboards about Amazon Application Load Balancing (ALB).",
       "email" : null,
       "id" : "DiVWEPsAgAA",
@@ -2938,7 +3196,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1999685058,
+  "hashCode" : 762268646,
   "id" : "DiVWEPsAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
