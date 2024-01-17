@@ -132,11 +132,18 @@ class OOTBDocAutomation:
                     group_dashboards_ids = data['groupExport']['group']['dashboards']
                     for group_id in group_dashboards_ids:
                         # Collecting view_support of a particular dashboard with help of dashboard_mapping
-                        collections[dashboard_data_mapping[group_id]["name"]] = {
+                        if dashboard_data_mapping[group_id]["name"] in collections.keys():
+                            collections[dashboard_data_mapping[group_id]["name"] + " - " + group_name] = {
                             "dashboard_group": group_name,
                             "view_support": dashboard_data_mapping[group_id]["view_support"][0] if dashboard_data_mapping[group_id]["view_support"] else (self.DASHBOARD_TYPE[dashboard_data_mapping[group_id]["name"]] if dashboard_data_mapping[group_id]["name"] in self.DASHBOARD_TYPE.keys() else "N/A"),
                             "importQualifiers": GitlabInventory.prepare_import_qualifiers(data['groupExport']['group']['importQualifiers']).replace("\n", " ")
                         }
+                        else:
+                            collections[dashboard_data_mapping[group_id]["name"]] = {
+                                "dashboard_group": group_name,
+                                "view_support": dashboard_data_mapping[group_id]["view_support"][0] if dashboard_data_mapping[group_id]["view_support"] else (self.DASHBOARD_TYPE[dashboard_data_mapping[group_id]["name"]] if dashboard_data_mapping[group_id]["name"] in self.DASHBOARD_TYPE.keys() else "N/A"),
+                                "importQualifiers": GitlabInventory.prepare_import_qualifiers(data['groupExport']['group']['importQualifiers']).replace("\n", " ")
+                            }
                 else:
                     break
         return collections
