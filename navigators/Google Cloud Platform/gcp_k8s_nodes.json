@@ -1,9 +1,10 @@
 {
-  "hashCode" : 346808040,
+  "hashCode" : -1374680142,
   "id" : "Ea1OhQzAYJI",
   "modelVersion" : 1,
   "navigatorExport" : {
     "navigator" : {
+      "aggregateDashboards" : [ "EbNoKO-AgAA" ],
       "connectedCategory" : null,
       "created" : 0,
       "creator" : null,
@@ -19,25 +20,29 @@
         } ],
         "metric" : "container/memory/request_utilization"
       } ],
+      "instanceDashboards" : [ "EbNoKO-AgAA" ],
+      "instanceDisplayText" : null,
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
-      "name" : "Kubernetes Engine Clusters",
+      "name" : "GKE nodes",
       "navigatorCategory" : "Google Cloud Platform",
       "navigatorCategoryDisplayName" : "Google Cloud Platform",
       "navigatorCategoryGroupDisplayName" : "Public Clouds",
       "navigatorCategoryInstancesName" : "service",
       "navigatorType" : "elemental",
-      "sites" : "o11yandsignalview",
-      "systemTypes" : null,
+      "ownerScope" : "splunk",
+      "relationships" : [ ],
+      "sites" : "o11y",
+      "systemTypes" : [ ],
       "uiModel" : {
         "alertQuery" : "_exists_:gcp_node_name",
         "category" : "Google Cloud Platform",
-        "categoryPriority" : 120,
-        "discoveryQuery" : [ "_exists_:cluster_name", "service:kubernetes", "_exists_:gcp_node_name" ],
-        "displayName" : "Kubernetes Engine Nodes",
-        "filterProperties" : [ ],
+        "categoryPriority" : 0,
+        "discoveryQuery" : [ ],
+        "displayName" : "GKE nodes",
+        "filterProperties" : null,
         "id" : "gke-nodes",
-        "idName" : "gke-nodes",
+        "idName" : "Node",
         "idTemplate" : "{{gcp_node_name}} | {{cluster_name}} | {{project_id}}",
         "listColumns" : [ {
           "aggregate" : null,
@@ -74,7 +79,7 @@
             "maxValue" : 100,
             "method" : "quantile",
             "minValue" : 0,
-            "range" : null
+            "range" : [ "#6bd37e", "#acef7f", "#e2ed6a", "#eac24b", "#ea1849" ]
           },
           "description" : "Utilization is averaged across all pods on the node, usage is based on limits and requests set at pod level",
           "displayName" : "CPU Utilization",
@@ -101,7 +106,7 @@
             "maxValue" : 100,
             "method" : "quantile",
             "minValue" : 0,
-            "range" : null
+            "range" : [ "#6bd37e", "#acef7f", "#e2ed6a", "#eac24b", "#ea1849" ]
           },
           "description" : "Utilization is averaged across all containers on the node.",
           "displayName" : "Memory Utilization",
@@ -123,22 +128,13 @@
           "valueLabel" : "Memory Utilization",
           "valueType" : null
         } ],
-        "mtsQuery" : "_exists_:gcp_node_name AND service:kubernetes",
-        "o11yMetricName" : null,
+        "mtsQuery" : null,
+        "o11yMetricName" : "Running nodes",
         "o11yMetricUnit" : null,
-        "o11yProductName" : null,
-        "o11ySignalflowTemplate" : null,
+        "o11yProductName" : "GKE nodes",
+        "o11ySignalflowTemplate" : "A = data('node/memory/total_bytes').sum(by=['project_id', 'cluster_name', 'gcp_id', 'node_name']).count().publish(label='A')",
         "o11yTrendDisplayMode" : null,
-        "propertyColumns" : [ [ {
-          "header" : "AWS",
-          "properties" : [ ]
-        } ], [ {
-          "header" : "Tags",
-          "properties" : [ "sf_tags" ]
-        }, {
-          "header" : "Other",
-          "properties" : [ ]
-        } ] ],
+        "propertyColumns" : null,
         "proxyProperties" : null,
         "requiredProperties" : [ "gcp_node_name" ],
         "singleHostSystemDashboardName" : "GKE Node",
@@ -152,7 +148,8 @@
         } ],
         "type" : "elemental",
         "unreleased" : false
-      }
+      },
+      "visualizations" : [ ]
     }
   },
   "packageType" : "NAVIGATOR"
