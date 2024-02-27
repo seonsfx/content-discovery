@@ -2466,7 +2466,7 @@
           "property" : "host.name",
           "values" : [ ]
         } ],
-        "metric" : "mysql.operation"
+        "metric" : "mysql.operations"
       }, {
         "filters" : [ {
           "not" : false,
@@ -2486,7 +2486,7 @@
       "teams" : null
     }
   },
-  "hashCode" : -1476779356,
+  "hashCode" : 1717944374,
   "id" : "GDeJDcDAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
