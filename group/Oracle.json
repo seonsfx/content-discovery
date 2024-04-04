@@ -4125,7 +4125,7 @@
         "noDataOptions" : {
           "linkText" : null,
           "linkUrl" : null,
-          "noDataMessage" : null
+          "noDataMessage" : "Currently, no data is available for this chart."
         },
         "programOptions" : {
           "disableSampling" : false,
@@ -4665,7 +4665,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1194678644,
+  "hashCode" : 1048199622,
   "id" : "FPfySWlAYAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
