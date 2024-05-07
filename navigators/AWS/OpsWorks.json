@@ -1,5 +1,5 @@
 {
-  "hashCode": -443894182,
+  "hashCode": 120220316,
   "id": "Fhr-dYpAcAI",
   "modelVersion": 1,
   "navigatorExport": {
@@ -57,7 +57,7 @@
       "sites": "o11y",
       "systemTypes": [],
       "uiModel": {
-        "alertQuery": "namespace:AWS/OpsWorks",
+        "alertQuery": "namespace:\"AWS/OpsWorks\"",
         "category": "Amazon Web Services",
         "categoryPriority": 0,
         "discoveryQuery": [],
