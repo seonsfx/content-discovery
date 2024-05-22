@@ -1,5 +1,5 @@
 {
-  "hashCode": 1524788270,
+  "hashCode": -1993848103,
   "id": "FWV48S9AYAE",
   "modelVersion": 1,
   "navigatorExport": {
@@ -164,12 +164,6 @@
                   "not": false,
                   "property": "stat",
                   "propertyValue": "mean",
-                  "type": "property"
-                },
-                {
-                  "not": false,
-                  "property": "AvailabilityZone",
-                  "propertyValue": "*",
                   "type": "property"
                 }
               ],
