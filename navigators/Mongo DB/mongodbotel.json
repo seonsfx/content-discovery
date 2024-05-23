@@ -1,5 +1,5 @@
 {
-  "hashCode": -1197730638,
+  "hashCode": 663351627,
   "id": "GOBQRPyAYAA",
   "modelVersion": 1,
   "navigatorExport": {
@@ -56,7 +56,9 @@
       "ownerScope": "splunk",
       "relationships": [],
       "sites": "o11y",
-      "systemTypes": [],
+      "systemTypes": [
+        "mongodb"
+      ],
       "uiModel": {
         "alertQuery": "sf_key:host.name AND (sf_metric:mongodb.operation.count OR sf_metric:mongodb.memory.usage OR sf_metric:mongodb.connection.count)",
         "category": "Datastores",
