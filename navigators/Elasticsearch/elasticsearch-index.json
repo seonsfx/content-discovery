@@ -1,5 +1,5 @@
 {
-  "hashCode": 2058803852,
+  "hashCode": -1778959209,
   "id": "FYQ8z4BAYAA",
   "modelVersion": 1,
   "navigatorExport": {
@@ -25,7 +25,7 @@
               ]
             }
           ],
-          "metric": "*.indices.indexing.index-total"
+          "metric": "counter.indices.total.indexing.index-total"
         }
       ],
       "instanceDashboards": [
