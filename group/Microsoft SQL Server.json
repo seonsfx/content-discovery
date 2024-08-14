@@ -3173,7 +3173,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('sqlserver_waitstats.wait_time_ms', rollup='delta').sum(by=['host.name']).mean().publish(label='A')\nB = data('sqlserver_database_io.read_latency_ms')\nC = data('sqlserver_database_io.write_latency_ms')\nD = union(B, C).mean().publish(label='D')\nE = data('sqlserver_performance.lock_wait_time').sum().publish(label='E')\nF = data('sqlserver_performance.disk_read_io_sec').sum()\nG = data('sqlserver_performance.disk_write_io_sec').sum()\nH = (F+G).publish(label='H')\nI = data('sqlserver_performance.number_of_deadlocks_sec').sum().publish(label='I')",
+      "programText" : "A = data('sqlserver_waitstats.wait_time_ms', rollup='delta').sum(by=['host.name', 'sql_instance']).mean().publish(label='A')\nB = data('sqlserver_database_io.read_latency_ms')\nC = data('sqlserver_database_io.write_latency_ms')\nD = union(B, C).mean().publish(label='D')\nE = data('sqlserver_performance.lock_wait_time').sum().publish(label='E')\nF = data('sqlserver_performance.disk_read_io_sec').sum()\nG = data('sqlserver_performance.disk_write_io_sec').sum()\nH = (F+G).publish(label='H')\nI = data('sqlserver_performance.number_of_deadlocks_sec').sum().publish(label='I')",
       "relatedDetectorIds" : [ ],
       "tags" : [ ]
     }
@@ -3188,7 +3188,7 @@
       "importOf" : "DzIxv3nAYAA",
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
-      "name" : "# Servers",
+      "name" : "# Instances",
       "options" : {
         "colorBy" : "Dimension",
         "colorScale" : null,
@@ -3206,7 +3206,7 @@
           "timezone" : null
         },
         "publishLabelOptions" : [ {
-          "displayName" : "User connections",
+          "displayName" : "Instances",
           "label" : "A",
           "paletteIndex" : null,
           "plotType" : null,
@@ -3411,7 +3411,7 @@
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
       "maxDelayOverride" : null,
-      "name" : "Microsoft SQL servers",
+      "name" : "Microsoft SQL instances",
       "permissions" : null,
       "selectedEventOverlays" : [ ],
       "tags" : null
@@ -3549,7 +3549,7 @@
       "lastUpdated" : 0,
       "lastUpdatedBy" : null,
       "maxDelayOverride" : null,
-      "name" : "Microsoft SQL server",
+      "name" : "Microsoft SQL instance",
       "permissions" : null,
       "selectedEventOverlays" : [ ],
       "tags" : null
@@ -3799,7 +3799,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1398552218,
+  "hashCode" : 475134122,
   "id" : "DzJ2qqxAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
