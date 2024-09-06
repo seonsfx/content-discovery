@@ -327,7 +327,7 @@
       }
     }
   ],
-  "hashCode": -1635126849,
+  "hashCode": -498473234,
   "id": "FTByWHUAYAA",
   "modelVersion": 1,
   "navigatorExport": {
@@ -866,7 +866,15 @@
           ]
         },
         {
-          "configuration": {},
+          "configuration": {
+            "actions": {
+              "showColorBy": false,
+              "showGroupBy": true,
+              "showNavigatorSettings": false,
+              "showOutliers": false
+            },
+            "listType": "multiMetric"
+          },
           "defaultVisualization": false,
           "type": "list",
           "views": [
