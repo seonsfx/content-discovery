@@ -21252,12 +21252,6 @@
         "row" : 0,
         "width" : 3
       }, {
-        "chartId" : "FY0-wIlAgAA",
-        "column" : 3,
-        "height" : 1,
-        "row": 1,
-        "width": 5
-      }, {
         "chartId" : "FY0-xY5AYAA",
         "column" : 0,
         "height" : 2,
@@ -23113,7 +23107,7 @@
       "teams" : null
     }
   },
-  "hashCode": -2025297217,
+  "hashCode": -2025297216,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
