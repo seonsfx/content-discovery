@@ -23488,7 +23488,7 @@
         "unitPrefix" : "Metric"
       },
       "packageSpecifications" : "",
-      "programText" : "A = data('k8s.pod.phase', filter=filter('k8s.namespace.name', '*') and filter('k8s.cluster.name', '*') and filter('kubernetes_node', '*'), rollup='latest').between(1.5, 2.5, low_inclusive=True, high_inclusive=True).sum(by=['k8s.pod.name', 'k8s.namespace.name', 'k8s.cluster.name']).count(by=['k8s.namespace.name', 'k8s.cluster.name']).publish(label='A')\nB = data('k8s.pod.phase', rollup='latest').sum(by=['k8s.namespace.name', 'k8s.workload.name', 'k8s.cluster.name', 'k8s.pod.name']).count(by=['k8s.namespace.name', 'k8s.cluster.name']).publish(label='B')",
+      "programText" : "A = data('k8s.pod.phase', filter=filter('k8s.namespace.name', '*') and filter('k8s.cluster.name', '*') and filter('k8s.node.name', '*'), rollup='latest').between(1.5, 2.5, low_inclusive=True, high_inclusive=True).sum(by=['k8s.pod.name', 'k8s.namespace.name', 'k8s.cluster.name']).count(by=['k8s.namespace.name', 'k8s.cluster.name']).publish(label='A')\nB = data('k8s.pod.phase', rollup='latest').sum(by=['k8s.namespace.name', 'k8s.workload.name', 'k8s.cluster.name', 'k8s.pod.name']).count(by=['k8s.namespace.name', 'k8s.cluster.name']).publish(label='B')",
       "relatedDetectorIds" : [ ],
       "tags" : [ ]
     }
@@ -31691,7 +31691,7 @@
       "teams" : null
     }
   },
-  "hashCode" : 1384982994,
+  "hashCode" : 1384982996,
   "id" : "DiVWf-iAgAA",
   "modelVersion" : 1,
   "packageType" : "GROUP"
