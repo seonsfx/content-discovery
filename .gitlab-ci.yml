@@ -9,7 +9,6 @@ stages:
   - validate-content
   - validate-ai-experimental
   - O11y-Out-of-the-Box-Inventory
-  - O11y-DOC-OOTB
   - public-catalog
 
 validate:
@@ -128,18 +127,3 @@ variables:
   GITHUB_FOLDER_NAME:
     value: "ootb"
     description: "Provide folder/path on which yaml files needs to be committed. Please add '-' (dash) in case to commit file on root/main folder  Default: ootb "
-
-update-o11y-doc-github:
-  image: python:3
-  stage: O11y-DOC-OOTB
-  # To run this job to just only on master branch and schedule
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-      when: always
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: always
-    - when: never
-
-  script:
-    - pip install -r requirement.txt
-    - python o11y_ootb_doc_automation.py -pat $GITHUB_PRIVATE_ACCESS_TOKEN -un $USER_OR_ORG_NAME -grn $GITHUB_REPO_NAME -bn $BRANCH_NAME -fn $GITHUB_FOLDER_NAME
